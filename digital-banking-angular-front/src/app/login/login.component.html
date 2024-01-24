@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+      <form [formGroup]="loginFormGroup" (ngSubmit)="handleSaveCustomer()">
+        <div class="mb-3">
+          <label class="form-label">Username:</label>
+          <input type="text" formControlName="username" class="form-control" />
+          <!-- <span
+            class="text-danger"
+            *ngIf="
+              loginFormGroup.controls['username'].touched &&
+              loginFormGroup.controls['username'].errors &&
+              loginFormGroup.controls['username'].errors!['required']
+            "
+          >
+            Username is Required
+          </span> -->
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password:</label>
+          <input type="text" formControlName="password" class="form-control" />
+          <!-- <span
+            class="text-danger"
+            *ngIf="
+              loginFormGroup.controls['password'].touched &&
+              loginFormGroup.controls['password'].errors &&
+              loginFormGroup.controls['password'].errors!['password']
+            "
+          >
+            Password is not valid
+          </span> -->
+        </div>
+        <button [disabled]="!loginFormGroup.valid" class="btn btn-info">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
